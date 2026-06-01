@@ -594,6 +594,14 @@
   .bx2-path { overflow: hidden; min-width: 0; }
   .bx2-codeblock { overflow-x: auto; max-width: 100%; }
   .bx2-codeblock .cl { white-space: pre-wrap; word-break: break-all; }
+
+  /* Step 04 — cap registration wireframe, hide background storefront */
+  .rep-shell { max-height: none; }
+  .rep-shell-bg { display: none; }
+  .rep-shell-scrim { display: none; }
+  .rep-shell-modal { position: relative; inset: auto; padding: 0; }
+  .rep-modal { max-width: 100%; max-height: none; box-shadow: none; border-radius: 10px; border: 1px solid var(--border-default); }
+  .rep-shell { background: transparent; border: none; box-shadow: none; }
 }
 @media (max-width: 720px) {
   .bx2-intro { max-width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left; }
