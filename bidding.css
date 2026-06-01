@@ -973,4 +973,51 @@
   .bx2-connect { margin: 10px 0; }
   .bx2-connect .cc { font-size: 10px; padding: 6px 10px; }
 
+  /* =========================================================================
+     WIREFRAME HEIGHT CAPS — mobile scroll reduction
+     Cap tall wireframes with gradient fade-out to cut ~3000px of scroll
+     ========================================================================= */
+
+  /* Step 2 — Storefront (1113px → 500px) — transparent step, parent bg #F5F8FF */
+  .bx2-step:nth-child(3) .wf.sf2 { max-height: 500px; overflow: hidden; position: relative; }
+  .bx2-step:nth-child(3) .wf.sf2::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+    pointer-events: none; z-index: 2; border-radius: 0 0 10px 10px;
+  }
+
+  /* Step 3 — Back-office shells on white bg: cap Create Sale, Assign, Sales page */
+  .bx2-step:nth-child(4) .bo-shell { max-height: 440px; overflow: hidden; position: relative; }
+  .bx2-step:nth-child(4) .bo-shell::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+    pointer-events: none; z-index: 2; border-radius: 0 0 10px 10px;
+  }
+  .bx2-step:nth-child(4) .bo-salespage { max-height: 400px; overflow: hidden; position: relative; }
+  .bx2-step:nth-child(4) .bo-salespage::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+    pointer-events: none; z-index: 2; border-radius: 0 0 10px 10px;
+  }
+
+  /* Step 4 — transparent step. Storefront below registration shell (1111px → 460px) */
+  .bx2-step:nth-child(5) .wf.sf2 { max-height: 460px; overflow: hidden; position: relative; }
+  .bx2-step:nth-child(5) .wf.sf2::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+    pointer-events: none; z-index: 2; border-radius: 0 0 10px 10px;
+  }
+
+  /* Step 5 — Lot detail / bidding on white bg (1217px → 500px) */
+  .bx2-step:nth-child(6) .wf.wf-rep { max-height: 500px; overflow: hidden; position: relative; }
+  .bx2-step:nth-child(6) .wf.wf-rep::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+    pointer-events: none; z-index: 2; border-radius: 0 0 10px 10px;
+  }
+
+  /* Tighter step spacing to further reduce scroll */
+  .bx2-step { padding: 24px 0; gap: 16px; }
+  .bx2-desc { margin-bottom: 14px; }
+
 }

@@ -333,6 +333,9 @@ body.no-ambient .mk .pd { animation: none !important; }
 .sec-acc-body .sec-chip { opacity: 1; transform: none; }
 
 @media (max-width: 460px) {
+  /* Override section padding — panels.css loads after site.css so 720px rule wins otherwise */
+  :root { --section-pad: 40px; }
+
   /* Testimonial compact */
   .tst-card { padding: 32px 18px 24px; }
   .tst-quote { font-size: clamp(17px, 4.5vw, 21px); line-height: 1.55; }
