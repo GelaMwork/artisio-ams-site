@@ -206,7 +206,38 @@ button { font-family: inherit; }
   /* Hero device stack — show only storefront on mobile */
   .hero-stack { min-height: 0; }
   .hero-scr-bo { display: none; }
-  .hero-scr-store { position: relative; top: auto; right: auto; width: 100%; transform: none; border-radius: 12px; }
+  .hero-scr-store { position: relative; top: auto; right: auto; width: 100%; transform: none; border-radius: 12px; overflow: hidden; }
+
+  /* Hero storefront mini-mock — mobile-native scaling */
+  .hf { font-size: 9px; }
+  .hf-bar { height: 20px; padding: 0 8px; }
+  .hf-dots i { width: 5px; height: 5px; }
+  .hf-url { font-size: 8px; }
+  .hf-nav { padding: 6px 10px; gap: 8px; }
+  .hf-mark { width: 14px; height: 14px; border-radius: 4px; }
+  .hf-wm i { height: 2px; }
+  .hf-link { font-size: 8px; }
+  .hf-acct { width: 16px; height: 16px; }
+  .hf-body { padding: 8px 10px 10px; }
+  .hf-head { margin-bottom: 6px; gap: 8px; }
+  .hf-title { font-size: 12px; }
+  .hf-sub { font-size: 7px; }
+  .hf-live { font-size: 7px; padding: 3px 7px; gap: 4px; }
+  .hf-live .d { width: 4px; height: 4px; }
+  .hf-chips { gap: 4px; margin-bottom: 8px; }
+  .hf-chip { font-size: 7.5px; padding: 3px 8px; }
+  .hf-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .hf-card { border-radius: 8px; }
+  .hf-photo { height: 44px; }
+  .hf-lot { font-size: 6px; padding: 1px 5px; top: 4px; left: 4px; }
+  .hf-badge { font-size: 6px; padding: 1px 5px; top: 4px; right: 4px; }
+  .hf-cb { padding: 5px 6px 6px; }
+  .hf-ct { font-size: 8px; }
+  .hf-cg { font-size: 6.5px; margin-top: 2px; }
+  .hf-bidrow { margin-top: 4px; padding-top: 4px; gap: 3px; }
+  .hf-bid { font-size: 5px; min-width: 0; overflow: hidden; }
+  .hf-bid b { font-size: 8px; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+  .hf-bidbtn { font-size: 6.5px; padding: 3px 6px; border-radius: 4px; flex: none; }
 
   /* About section compact */
   .about-badge { width: 160px; height: 160px; }

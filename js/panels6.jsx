@@ -42,7 +42,7 @@ const BiddingExperience = () => {
 
           </h2>
           <p className={"panel-sub reveal" + (inView ? " in" : "")} style={{ "--d": "140ms" }}>
-            Run timed property auctions on your own branded site — your logo, your domain, entirely your experience. 
+            Run timed property auctions on your own branded site — your logo, your domain, entirely your experience.
             <strong style={{ color: "var(--text-primary)" }}></strong>
           </p>
           <div className={"bx2-loop reveal" + (inView ? " in" : "")} style={{ "--d": "220ms", display: "flex", flexWrap: "nowrap", width: "max-content", maxWidth: "none", marginTop: "28px", marginLeft: "50%", transform: "translateX(-50%)" }}>

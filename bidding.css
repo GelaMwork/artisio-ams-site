@@ -603,43 +603,216 @@
   .bx2-desc { font-size: 15px; margin-top: 10px; }
   .bx2-links { gap: 8px; margin-top: 16px; }
 
-  /* ---- Wireframe height caps with gradient fade ---- */
-  .bo-shell { width: calc(100vw - 24px); margin-left: calc(-50vw + 12px); padding: 46px 14px 14px; max-height: 360px; overflow: hidden; }
-  .bo-shell::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, var(--bg-sidebar)); z-index: 10; pointer-events: none; }
-  .bo-salespage { width: calc(100vw - 24px); margin-left: calc(-50vw + 12px); max-height: 400px; overflow: hidden; position: relative; }
-  .bo-salespage::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, var(--bg-canvas)); z-index: 10; pointer-events: none; }
+  /* =========================================================================
+     MOBILE WIREFRAME REDESIGN — compact, readable, mobile-native
+     ========================================================================= */
 
-  /* Paths / option cards */
-  .bx2-paths { gap: 10px; grid-template-columns: 1fr; }
-  .bx2-paths-intro { margin: 20px 0 10px; }
-  .bx2-doclink { min-width: 0; }
-  .bx2-secure { margin-top: 20px; padding-top: 16px; }
-  .bx2-secure-grid { grid-template-columns: 1fr; gap: 10px; }
-  .bx2-secure-item { font-size: 13px; }
+  /* ---- Global wireframe scaling ---- */
+  .wf { font-size: 11px; border-radius: 10px; }
+  .wf-chrome { padding: 6px 8px; gap: 6px; }
+  .wf-dots { gap: 4px; }
+  .wf-dots i { width: 6px; height: 6px; }
+  .wf-url { height: 20px; font-size: 9px; padding: 0 6px; gap: 4px; border-radius: 5px; }
+  .wf-url svg { width: 10px; height: 10px; }
+  .wf-appbar { padding: 6px 10px; gap: 8px; }
+  .wf-appbar .wf-appbar-brand { height: 12px; }
+  .wf-appbar .right { font-size: 9px; gap: 8px; }
+  .wf-appbar .right .av { width: 16px; height: 16px; }
 
-  /* Embed code block */
-  .bx2-embed { margin-top: 18px; }
-  .bx2-codeblock { padding: 12px 14px; }
-  .bx2-codeblock .cl { font-size: 11px; line-height: 1.6; }
+  /* ---- Generic atoms scaled ---- */
+  .wf-btn { height: 26px; padding: 0 8px; font-size: 10px; border-radius: 5px; gap: 4px; }
+  .wf-btn.pri { height: 26px; }
+  .wf-btn svg { width: 10px; height: 10px; }
+  .wf-field { height: 28px; font-size: 11px; padding: 0 8px; border-radius: 6px; }
+  .wf-label { font-size: 9px; margin-bottom: 3px; }
+  .wf-pill { font-size: 8px; padding: 2px 6px; }
+  .wf-cb { width: 14px; height: 14px; border-radius: 4px; }
+  .wf-cb.on svg { width: 9px; height: 9px; }
 
-  /* ---- Reportage wireframe compact ---- */
-  .rh-hero { padding: 16px 16px 24px; }
-  .rh-stage { height: 200px; }
+  /* ---- Back-office shell (modal overlay) ---- */
+  .bo-shell { width: 100%; left: 0; margin-left: 0; padding: 36px 10px 10px; border-radius: 10px; }
+  .bo-shell-tag { font-size: 9px; padding: 4px 10px; gap: 6px; top: 10px; }
+  .bo-shell-tag img { height: 10px; }
+  .bo-shell-modal > * { max-width: 100%; }
+
+  /* ---- Back-office modal (Create Sale, Assign Items) ---- */
+  .bo-modal { border-radius: 8px; }
+  .bo-modal-head { padding: 10px 12px; }
+  .bo-modal-head h4 { font-size: 13px; }
+  .bo-modal-head .x svg { width: 14px; height: 14px; }
+  .bo-modal-body { padding: 12px; }
+  .bo-modal-foot { padding: 10px 12px; gap: 8px; }
+  .bo-grid2 { grid-template-columns: 1fr; gap: 14px; }
+  .bo-row3 { grid-template-columns: 1fr; gap: 8px; }
+  .bo-row2 { grid-template-columns: 1fr; gap: 8px; }
+  .bo-hint { font-size: 9px; }
+  .bo-checks { grid-template-columns: 1fr; gap: 6px; }
+  .bo-check { font-size: 11px; gap: 6px; }
+  .bo-thumbs { grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .bo-thumb .cover { font-size: 7px; left: 3px; bottom: 3px; padding: 1px 4px; }
+  .bo-thumb .rm { width: 14px; height: 14px; top: 2px; right: 2px; }
+  .bo-catfile { padding: 8px 10px; gap: 8px; }
+  .bo-catfile .fic { width: 26px; height: 26px; border-radius: 5px; }
+  .bo-catfile .fn { font-size: 11px; }
+  .bo-catfile .fs { font-size: 9px; }
+
+  /* ---- Back-office tables ---- */
+  .bo-table thead th { font-size: 8px; padding: 6px 8px; }
+  .bo-table tbody td { font-size: 10px; padding: 6px 8px; }
+  .bo-prop .thumb { width: 30px; height: 24px; border-radius: 4px; }
+  .bo-prop { gap: 6px; }
+  .bo-prop .pt { font-size: 10px; }
+  .bo-prop .ps { font-size: 8px; }
+  .bo-lotno { min-width: 22px; height: 20px; padding: 0 5px; font-size: 10px; border-radius: 5px; }
+  .bo-toolbar { padding: 6px 10px; gap: 6px; }
+  .bo-sidebar { width: 0; padding: 0; overflow: hidden; display: none; }
+  .bo-app .bo-sidebar { display: none; }
+
+  /* ---- Back-office Sales page (full AMS) ---- */
+  .bo-salespage { width: 100%; left: 0; margin-left: 0; border-radius: 10px; max-height: none; overflow: hidden; }
+  .bo-salespage::after { display: none; }
+  .bo-salespage .bo-sidebar { display: none; }
+  .bo-sales-top { padding: 8px 10px; gap: 6px; }
+  .bo-sales-top .bo-crumb { font-size: 10px; gap: 4px; }
+  .bo-sales-actions { gap: 4px; }
+  .bo-sales-actions .wf-btn { height: 24px; font-size: 9px; padding: 0 6px; }
+  .bo-subtabs { padding: 0 8px; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .bo-stab { padding: 7px 6px; font-size: 9px; white-space: nowrap; }
+  .bo-more-menu { width: 160px; padding: 3px; border-radius: 7px; }
+  .bo-more-menu .opt { padding: 6px 8px; font-size: 10px; border-radius: 5px; }
+
+  /* ---- Stats row (Live Lot Performance) ---- */
+  .bo-stat-row { grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 8px; }
+  .bo-stat { padding: 8px; border-radius: 6px; }
+  .bo-stat .sl { font-size: 8px; }
+  .bo-stat .sv { font-size: 14px; margin-top: 2px; }
+  .bo-stat .live-dot { width: 5px; height: 5px; top: 7px; right: 7px; }
+  .bo-tabs { padding: 0 8px; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .bo-tab { padding: 7px 6px; font-size: 9px; }
+  .bo-tab svg { width: 10px; height: 10px; }
+  .bo-pagehead { padding: 8px 10px; }
+  .bo-pagehead h3 { font-size: 14px; }
+
+  /* ---- Reportage wireframes ---- */
+  .rep-nav { padding: 8px 10px; gap: 8px; }
+  .rep-nav .nl { font-size: 8px; letter-spacing: .02em; }
+  .rep-nav .right { gap: 8px; }
+  .rep-nav .acct { font-size: 9px; gap: 4px; }
+  .rep-nav .acct .av { width: 16px; height: 16px; }
+  .rep-logo img { height: 14px; }
+  .rep-btn { height: 28px; padding: 0 10px; font-size: 8px; letter-spacing: .04em; }
+  .rep-btn.lg { height: 32px; font-size: 9px; }
+
+  /* Reportage hero */
+  .rep-hero { padding: 14px 10px 12px; gap: 10px; }
+  .rep-hero .ey { font-size: 8px; }
+  .rep-hero h2 { font-size: 18px; margin-top: 4px; }
+  .rep-hero .meta { font-size: 9px; gap: 8px; margin-top: 4px; }
+  .rep-hero .ends .l { font-size: 8px; }
+  .rep-hero .ends .v { font-size: 14px; }
+
+  /* Reportage storefront listing */
+  .rep-listing { grid-template-columns: 1fr; gap: 10px; padding: 10px; }
+  .rep-filters { display: none; }
+  .rep-results .rh { margin-bottom: 8px; }
+  .rep-results .rh .ct { font-size: 10px; }
+  .rep-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .rep-card .ph { height: 80px; }
+  .rep-card .cb { padding: 6px 8px 8px; }
+  .rep-card .lot { font-size: 7px; }
+  .rep-card .ti { font-size: 10px; margin-top: 3px; }
+  .rep-card .loc { font-size: 8px; margin-top: 2px; }
+  .rep-card .specs { font-size: 8px; gap: 6px; margin-top: 6px; padding-top: 6px; }
+  .rep-card .gd { margin-top: 6px; }
+  .rep-card .gd .gl { font-size: 7px; }
+  .rep-card .gd .gv { font-size: 11px; }
+  .rep-card .gd .rep-btn { height: 22px; font-size: 7px; padding: 0 6px; }
+
+  /* Reportage lot detail */
+  .rep-lot { display: flex; flex-direction: column; }
+  .rep-lot .gal { padding: 8px; }
+  .rep-lot .gal .hero { height: 120px; border-radius: 6px; overflow: hidden; }
+  .rep-lot .gal .hero img { width: 100%; height: 100%; object-fit: cover; }
+  .rep-lot .gal .thumbs { gap: 4px; margin-top: 6px; }
+  .rep-lot .gal .thumbs .t { width: 36px; height: 28px; border-radius: 3px; }
+  .rep-lot .gal .desc { font-size: 10px; margin-top: 8px; line-height: 1.4; }
+  .rep-lot .gal .specs { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; font-size: 9px; margin-top: 8px; }
+  .rep-lot .gal .specs .f { padding: 3px 0; }
+  .rep-lot .gal .specs .fl { font-size: 8px; }
+  .rep-lot .gal .specs .fv { font-size: 9px; }
+  .rep-lot .gal .keyfeat { margin-top: 8px; }
+  .rep-lot .gal .keyfeat .kt { font-size: 9px; }
+  .rep-lot .gal .keyfeat li { font-size: 9px; }
+  .rep-lot .gal .legal { font-size: 8px; }
+  .rep-lot .bidrail { padding: 10px; border-top: 1px solid var(--rep-line); }
+  .rep-lot .bidrail .lotcaps { font-size: 8px; }
+  .rep-lot .bidrail .lottitle { font-size: 14px; }
+  .rep-lot .bidrail .bidbox { padding: 8px; }
+  .rep-lot .bidrail .bidbox .cv { font-size: 18px; }
+  .rep-lot .bidrail .bidbox .nb { font-size: 9px; }
+  .rep-lot .bidrail .bidbox .crow .cl { font-size: 9px; }
+  .rep-lbl { font-size: 9px; }
+  .rep-input { height: 28px; font-size: 10px; }
+  .rep-divider .t { font-size: 9px; }
+
+  /* Registration modal */
+  .rep-shell-modal { padding: 10px 8px; }
+  .rep-modal { max-width: 100%; border-radius: 8px; }
+  .rep-modal-head { padding: 12px 12px 0; }
+  .rep-modal-head h3 { font-size: 16px; }
+  .rep-modal-head .sub { font-size: 10px; }
+  .rep-modal .rep-reg .form { padding: 10px 12px 14px; }
+  .rep-modal .rep-reg .form > div:first-child { grid-template-columns: 1fr; gap: 8px; }
+  .rep-req { padding: 8px 0; }
+  .rep-req .ic { width: 28px; height: 28px; }
+  .rep-req .ic svg { width: 14px; height: 14px; }
+  .rep-req .rt { font-size: 11px; }
+  .rep-req .rd { font-size: 9px; }
+  .rep-modal-foot { padding: 8px 12px; }
+  .rep-modal-foot .foot-help { font-size: 9px; }
+  .rep-modal-foot .foot-actions { gap: 6px; }
+
+  /* ---- Reportage homepage (Step 01) ---- */
+  .rh-hero { padding: 10px 10px 16px; }
+  .rh-stage { height: 160px; }
   .rh-circle { display: none; }
-  .rh-oval { border-radius: 12px; }
-  .rh-indicator { left: 16px; bottom: 10px; gap: 10px; }
-  .rh-nav { padding: 12px 16px; gap: 16px; }
-  .rh-auctions { font-size: 10px; padding: 8px 14px; }
-  .rh-nav .rep-logo img { height: 18px; }
+  .rh-oval { border-radius: 8px; }
+  .rh-float { display: none; }
+  .rh-indicator { left: 10px; bottom: 8px; gap: 6px; }
+  .rh-nav .rep-logo img { height: 14px; }
+  .rh-auctions { font-size: 8px; padding: 5px 8px; }
+  .rh-menu { display: none; }
+  .rh-burger i { width: 14px; height: 1.5px; }
 
-  /* ---- Lot detail / bidder registration height caps ---- */
-  .lot-detail { max-height: 420px; overflow: hidden; position: relative; }
-  .lot-detail::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(to bottom, transparent, var(--bg-surface)); z-index: 10; pointer-events: none; }
+  /* ---- Paths / option cards ---- */
+  .bx2-step { overflow: hidden; }
+  .bx2-paths { gap: 10px; grid-template-columns: 1fr; overflow: hidden; }
+  .bx2-paths-intro { margin: 14px 0 8px; font-size: 12px; }
+  .bx2-path { padding: 14px; overflow: hidden; min-width: 0; }
+  .bx2-path-title { font-size: 14px; }
+  .bx2-path-desc { font-size: 12px; }
+  .bx2-path-tag { white-space: normal; }
+  .bx2-doclink { min-width: 0; padding: 8px 10px; }
+  .bx2-doclink .dt { font-size: 11px; }
+  .bx2-doclink .dm { font-size: 9px; word-break: break-all; }
+  .bx2-rest-row { font-size: 11px; gap: 8px; }
+  .bx2-rest-row .ep { word-break: break-all; }
 
-  /* Wireframe chrome compact */
-  .wf-chrome { padding: 8px 10px; gap: 8px; }
-  .wf-dots i { width: 8px; height: 8px; }
-  .wf-url { height: 24px; font-size: 11px; padding: 0 8px; }
-  .wf-appbar { padding: 8px 12px; gap: 10px; }
-  .wf-appbar .brand { font-size: 12px; }
+  /* ---- Secure grid ---- */
+  .bx2-secure { margin-top: 16px; padding-top: 12px; }
+  .bx2-secure-head { font-size: 11px; gap: 6px; margin-bottom: 10px; }
+  .bx2-secure-grid { grid-template-columns: 1fr; gap: 8px; }
+  .bx2-secure-item { font-size: 12px; gap: 8px; }
+  .bx2-secure-item .ck { width: 18px; height: 18px; }
+
+  /* ---- Code block ---- */
+  .bx2-codeblock { padding: 10px 10px; border-radius: 8px; overflow-x: auto; max-width: 100%; }
+  .bx2-codeblock .cl { font-size: 9px; line-height: 1.6; white-space: pre-wrap; word-break: break-all; }
+
+  /* ---- Two-stack substep labels ---- */
+  .bx2-substep { margin: 14px 0 8px; }
+  .bx2-substep .slab { font-size: 10px; }
+  .bx2-connect { margin: 10px 0; }
+  .bx2-connect .cc { font-size: 10px; padding: 6px 10px; }
+
 }
