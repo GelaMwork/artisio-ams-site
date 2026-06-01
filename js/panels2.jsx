@@ -1,4 +1,4 @@
-/* global React, Icon, useReveal, useCountUp */
+/* global React, Icon, useReveal, useCountUp, useMobile */
 const { useState: useS2 } = React;
 
 /* =========================================================================
@@ -91,6 +91,10 @@ const CapCard = ({ c, i }) => {
 
 const Platform = () => {
   const [ref, inView] = useReveal();
+  const mobile = useMobile();
+  const [showAll, setShowAll] = useS2(false);
+  const visibleCaps = (mobile && !showAll) ? CAPS.slice(0, 4) : CAPS;
+  const hasMore = mobile && !showAll && CAPS.length > 4;
   return (
     <section className="section" id="platform">
       <div className="wrap">
@@ -103,8 +107,15 @@ const Platform = () => {
           </p>
         </div>
         <div className="cap-grid">
-          {CAPS.map((c, i) => <CapCard key={c.title} c={c} i={i} />)}
+          {visibleCaps.map((c, i) => <CapCard key={c.title} c={c} i={i} />)}
         </div>
+        {hasMore && (
+          <div style={{ textAlign: "center", marginTop: 20 }}>
+            <button className="btn btn-outline show-more-btn" onClick={() => setShowAll(true)}>
+              Show all {CAPS.length} capabilities <Icon n="arrow" s={14} />
+            </button>
+          </div>
+        )}
       </div>
     </section>);
 

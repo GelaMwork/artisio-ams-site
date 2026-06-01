@@ -102,7 +102,23 @@ function useTilt(max = 8) {
   return { onMouseMove: onMove, onMouseLeave: onLeave, style };
 }
 
+/* Returns true when viewport width <= breakpoint (default 460px). Updates on resize. */
+function useMobile(breakpoint = 460) {
+  const mq = useRef(null);
+  const [mobile, setMobile] = useState(() => typeof window !== "undefined" && window.innerWidth <= breakpoint);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    mq.current = window.matchMedia(`(max-width: ${breakpoint}px)`);
+    const handler = (e) => setMobile(e.matches);
+    setMobile(mq.current.matches);
+    mq.current.addEventListener("change", handler);
+    return () => mq.current.removeEventListener("change", handler);
+  }, [breakpoint]);
+  return mobile;
+}
+
 window.useReveal = useReveal;
 window.useCountUp = useCountUp;
 window.useScrollY = useScrollY;
 window.useTilt = useTilt;
+window.useMobile = useMobile;

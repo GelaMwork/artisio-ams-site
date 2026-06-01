@@ -188,11 +188,40 @@ button { font-family: inherit; }
 
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); padding: 7px 14px 7px 10px; border-radius: 999px; backdrop-filter: blur(6px); white-space: nowrap; }
 @media (max-width: 460px) {
-  :root { --section-pad: 48px; }
-  .hero-eyebrow { white-space: normal; }
-  .hero { padding-top: 100px; padding-bottom: 72px; }
+  :root { --section-pad: 40px; }
+  .hero-eyebrow { white-space: normal; font-size: 11px; padding: 6px 12px 6px 8px; }
+  .hero { padding-top: 96px; padding-bottom: 56px; }
   .wrap { padding: 0 16px; }
   .panel-h { font-size: clamp(26px, 7vw, 34px); }
+  .panel-sub { font-size: 14px; }
+  .section-head { margin-bottom: 28px; }
+
+  /* Hero compact */
+  h1.hero-title { font-size: clamp(30px, 8.5vw, 42px); margin-top: 14px; }
+  .hero-lead { font-size: 14.5px; margin-top: 14px; }
+  .hero-actions { margin-top: 20px; }
+  .hero-trust { margin-top: 24px; gap: 14px; }
+  .hero-trust b { font-size: 16px; }
+
+  /* Hero device stack — show only storefront on mobile */
+  .hero-stack { min-height: 0; }
+  .hero-scr-bo { display: none; }
+  .hero-scr-store { position: relative; top: auto; right: auto; width: 100%; transform: none; border-radius: 12px; }
+
+  /* About section compact */
+  .about-badge { width: 160px; height: 160px; }
+  .about-badge svg { width: 160px; height: 160px; }
+  .about-stats { gap: 0; }
+
+  /* Commitment section compact */
+  .commit-card { padding: 16px; gap: 12px; }
+  .commit-card p { font-size: 13px; }
+  .commit-ico { width: 36px; height: 36px; border-radius: 9px; }
+
+  /* CRM bento compact */
+  .crm-card { padding: 20px; min-height: auto; }
+  .crm-ico { width: 36px; height: 36px; border-radius: 9px; }
+  .crm-txt { font-size: 13.5px; }
 }
 .hero-eyebrow .dot { width: 7px; height: 7px; border-radius: 999px; background: var(--artisio-sky); box-shadow: 0 0 0 4px rgba(0,170,255,.25); }
 

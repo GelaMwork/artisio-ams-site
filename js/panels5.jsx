@@ -1,4 +1,4 @@
-/* global React, Icon, useReveal, LogoLight, MockMarketing, MockPayments, MockBidders */
+/* global React, Icon, useReveal, useMobile, LogoLight, MockMarketing, MockPayments, MockBidders */
 
 /* =========================================================================
    PANEL 9 — Infrastructure / Security by design
@@ -32,8 +32,37 @@ const SecCol = ({ c }) => {
 
 };
 
+/* Mobile accordion card — shows icon + title, expands to reveal description + chips */
+const SecAccordion = ({ c }) => {
+  const [open, setOpen] = React.useState(false);
+  const bodyRef = React.useRef(null);
+  const [bodyH, setBodyH] = React.useState(0);
+  React.useEffect(() => {
+    if (bodyRef.current) setBodyH(bodyRef.current.scrollHeight);
+  }, [open]);
+  return (
+    <div className={"sec-acc" + (open ? " sec-acc-open" : "")} onClick={() => setOpen(!open)}>
+      <div className="sec-acc-header">
+        <div className="sec-ico"><Icon n={c.ico} s={20} /></div>
+        <h3>{c.h}</h3>
+        <span className="sec-acc-chevron"><Icon n="arrow" s={14} /></span>
+      </div>
+      <div className="sec-acc-body" ref={bodyRef} style={{ maxHeight: open ? bodyH + 20 : 0 }}>
+        <p>{c.p}</p>
+        <div className="sec-chips">
+          {c.chips.map((ch) =>
+            <span className="sec-chip" key={ch}>
+              <span className="vk"><Icon n="check" s={9} sw={3.5} /></span>{ch}
+            </span>
+          )}
+        </div>
+      </div>
+    </div>);
+};
+
 const Security = () => {
   const [ref, inView] = useReveal();
+  const mobile = useMobile();
   return (
     <section className="section sec-section" id="security">
       <div className="sec-scan" />
@@ -46,9 +75,15 @@ const Security = () => {
             independently certified infrastructure.
           </p>
         </div>
-        <div className="sec-grid">
-          {SEC_COLS.map((c) => <SecCol key={c.h} c={c} />)}
-        </div>
+        {mobile ? (
+          <div className="sec-acc-list">
+            {SEC_COLS.map((c) => <SecAccordion key={c.h} c={c} />)}
+          </div>
+        ) : (
+          <div className="sec-grid">
+            {SEC_COLS.map((c) => <SecCol key={c.h} c={c} />)}
+          </div>
+        )}
       </div>
     </section>);
 

@@ -595,20 +595,51 @@
 }
 @media (max-width: 460px) {
   .bx2-intro { padding: 0 16px; }
-  .bx2-step { padding: 40px 0; }
-  .bx2-watermark { font-size: 80px; }
+  .bx2-step { padding: 32px 0; }
+  .bx2-watermark { font-size: 60px; opacity: .025; }
   .bx2-title { font-size: clamp(22px, 6.5vw, 30px); }
-  .bo-shell { width: calc(100vw - 24px); margin-left: calc(-50vw + 12px); padding: 46px 14px 14px; }
-  .bo-salespage { width: calc(100vw - 24px); margin-left: calc(-50vw + 12px); }
-  .bx2-paths { gap: 14px; }
+  .bx2-head { gap: 14px; margin-bottom: 24px; }
+  .bx2-num { width: 40px; height: 40px; border-radius: 10px; font-size: 16px; }
+  .bx2-desc { font-size: 15px; margin-top: 10px; }
+  .bx2-links { gap: 8px; margin-top: 16px; }
+
+  /* ---- Wireframe height caps with gradient fade ---- */
+  .bo-shell { width: calc(100vw - 24px); margin-left: calc(-50vw + 12px); padding: 46px 14px 14px; max-height: 360px; overflow: hidden; }
+  .bo-shell::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, var(--bg-sidebar)); z-index: 10; pointer-events: none; }
+  .bo-salespage { width: calc(100vw - 24px); margin-left: calc(-50vw + 12px); max-height: 400px; overflow: hidden; position: relative; }
+  .bo-salespage::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, var(--bg-canvas)); z-index: 10; pointer-events: none; }
+
+  /* Paths / option cards */
+  .bx2-paths { gap: 10px; grid-template-columns: 1fr; }
+  .bx2-paths-intro { margin: 20px 0 10px; }
   .bx2-doclink { min-width: 0; }
-  .bx2-secure-grid { grid-template-columns: 1fr; }
+  .bx2-secure { margin-top: 20px; padding-top: 16px; }
+  .bx2-secure-grid { grid-template-columns: 1fr; gap: 10px; }
+  .bx2-secure-item { font-size: 13px; }
+
+  /* Embed code block */
+  .bx2-embed { margin-top: 18px; }
+  .bx2-codeblock { padding: 12px 14px; }
+  .bx2-codeblock .cl { font-size: 11px; line-height: 1.6; }
+
+  /* ---- Reportage wireframe compact ---- */
   .rh-hero { padding: 16px 16px 24px; }
-  .rh-stage { height: 220px; }
+  .rh-stage { height: 200px; }
   .rh-circle { display: none; }
   .rh-oval { border-radius: 12px; }
   .rh-indicator { left: 16px; bottom: 10px; gap: 10px; }
   .rh-nav { padding: 12px 16px; gap: 16px; }
   .rh-auctions { font-size: 10px; padding: 8px 14px; }
   .rh-nav .rep-logo img { height: 18px; }
+
+  /* ---- Lot detail / bidder registration height caps ---- */
+  .lot-detail { max-height: 420px; overflow: hidden; position: relative; }
+  .lot-detail::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(to bottom, transparent, var(--bg-surface)); z-index: 10; pointer-events: none; }
+
+  /* Wireframe chrome compact */
+  .wf-chrome { padding: 8px 10px; gap: 8px; }
+  .wf-dots i { width: 8px; height: 8px; }
+  .wf-url { height: 24px; font-size: 11px; padding: 0 8px; }
+  .wf-appbar { padding: 8px 12px; gap: 10px; }
+  .wf-appbar .brand { font-size: 12px; }
 }

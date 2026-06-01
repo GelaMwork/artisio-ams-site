@@ -22,6 +22,7 @@ const QUOTES = [
 const Testimonial = () => {
   const [i, setI] = useS4(0);
   const [ref, inView] = useReveal({ threshold: 0.35 });
+  const touchRef = useR4({ x: 0, t: 0 });
   useE4(() => {
     if (window.PRM) return;
     const t = setInterval(() => setI((p) => (p + 1) % QUOTES.length), 7000);
@@ -33,11 +34,20 @@ const Testimonial = () => {
     (acc[g] = acc[g] || []).push(w);
     return acc;
   }, []);
+  const onTouchStart = (e) => { touchRef.current = { x: e.touches[0].clientX, t: Date.now() }; };
+  const onTouchEnd = (e) => {
+    const dx = e.changedTouches[0].clientX - touchRef.current.x;
+    const dt = Date.now() - touchRef.current.t;
+    if (Math.abs(dx) > 50 && dt < 400) {
+      if (dx < 0) setI((p) => (p + 1) % QUOTES.length);
+      else setI((p) => (p - 1 + QUOTES.length) % QUOTES.length);
+    }
+  };
   return (
     <section className="section tst-section">
       <div className="wrap">
-        <div className="tst-card" ref={ref}>
-          <div className={"tst-quote-mark" + (inView ? " in" : "")}>“</div>
+        <div className="tst-card" ref={ref} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+          <div className={"tst-quote-mark" + (inView ? " in" : "")}>"</div>
           <blockquote className={"tst-quote" + (inView ? " in" : "")} key={i}>
             {groups.map((g, gi) => (
               <span className="wg" key={gi} style={{ "--d": gi * 90 + "ms" }}>{g.join(" ")} </span>
@@ -111,7 +121,15 @@ const DeepDive = () => {
 
   useL4(() => {
     const btn = btnRefs.current[active];
-    if (btn) setInd({ left: btn.offsetLeft, width: btn.offsetWidth });
+    if (btn) {
+      setInd({ left: btn.offsetLeft, width: btn.offsetWidth });
+      /* Auto-scroll tab bar so active tab is visible on mobile */
+      if (tabsRef.current && tabsRef.current.scrollTo) {
+        const bar = tabsRef.current;
+        const scrollTarget = btn.offsetLeft - bar.offsetWidth / 2 + btn.offsetWidth / 2;
+        bar.scrollTo({ left: Math.max(0, scrollTarget), behavior: "smooth" });
+      }
+    }
   }, [active]);
 
   useE4(() => {
