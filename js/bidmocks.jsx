@@ -114,15 +114,12 @@ const RepHomepage = () => (
         </div>
         <div className="rh-circle">
           <div className="glass" />
-          <span className="rh-o rh-o-tag" />
-          <span className="rh-o rh-o-title" />
+          <span className="rh-c-loc">Abu Dhabi</span>
+          <span className="rh-c-name">Sensational<br />Living</span>
+          <span className="rh-c-sub">Luxury residences from AED 1.2M</span>
           <span className="rh-explore">
-            <span className="rh-ph-exp" />
-            <span className="c">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#15171C" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" style={{ width: 18, height: 18 }}>
-                <path d="M3 12h15M13 6l6 6-6 6" />
-              </svg>
-            </span>
+            <span className="rh-exp-t">Explore</span>
+            <span className="c"><Icon n="arrow" s={16} sw={2} /></span>
           </span>
         </div>
         <div className="rh-float">
