@@ -138,6 +138,49 @@ const RepHomepage = () => (
         <div className="rh-slide"><span className="tk" style={{ height: 18 }} /><span className="bar" /></div>
       </div>
     </div>
+    <div className="rh-lots">
+      <div className="rh-lots-head">
+        <div className="rh-lots-left">
+          <h3>Upcoming Auction</h3>
+          <span className="rh-lots-meta">May Property Auction · 13 lots</span>
+        </div>
+        <div className="rh-lots-right">
+          <span className="rh-lots-live">
+            <span className="sf2-dot" />
+            <span className="sf2-live-label">Live</span>
+            <span className="sf2-live-sep" />
+            <span className="sf2-live-time"><RepCountdown mode="full" /></span>
+          </span>
+          <span className="rh-lots-viewall">View all lots <Icon n="arrow" s={13} sw={2} /></span>
+        </div>
+      </div>
+      <div className="rh-lots-grid">
+        {PROPS.slice(0, 3).map((p) => (
+          <div className="sf2-card" key={p.lot}>
+            <div className="sf2-img">
+              <img src={p.photo} alt="" style={{ objectPosition: p.pos || "50% 50%" }} />
+              <span className="sf2-lot">Lot {p.lot}</span>
+              <span className="sf2-cd"><RepCountdown mode="card" offset={p.lot * 37} /></span>
+            </div>
+            <div className="sf2-body">
+              <div className="sf2-ti">{p.title}</div>
+              <div className="sf2-loc"><Icon n="pin" s={11} sw={1.8} /> {p.loc}</div>
+              <div className="sf2-specs">
+                <span><Icon n="bed" s={12} sw={1.7} /> {p.beds}</span>
+                <span><Icon n="ruler" s={12} sw={1.7} /> {p.area}</span>
+              </div>
+              <div className="sf2-foot">
+                <div className="sf2-price">
+                  <span className="sf2-gl">Guide</span>
+                  <span className="sf2-gv">{p.guide.split(" – ")[0]}</span>
+                </div>
+                <span className="sf2-view">View <Icon n="arrow" s={13} sw={2} /></span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   </div>
 );
 

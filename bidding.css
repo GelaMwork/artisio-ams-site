@@ -637,6 +637,24 @@
 .rh-float { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 11px; z-index: 5; }
 .rh-float .fb { width: 38px; height: 38px; border-radius: 50%; background: #9AA0A6; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); }
 
+/* ── Homepage featured lots ── */
+.rh-lots { padding: 22px 22px 24px; border-top: 1px solid var(--rep-line); background: var(--rep-paper); }
+.rh-lots-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.rh-lots-left h3 { font-family: var(--font-sans); font-weight: 700; font-size: 17px; letter-spacing: -.01em; margin: 0; color: var(--rep-ink); }
+.rh-lots-meta { font-size: 11.5px; color: var(--rep-muted); margin-top: 2px; display: block; }
+.rh-lots-right { display: flex; align-items: center; gap: 14px; flex: none; }
+.rh-lots-live { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border-radius: 8px; background: rgba(239,68,68,.06); border: 1px solid rgba(239,68,68,.13); white-space: nowrap; }
+.rh-lots-live .sf2-live-time { font-size: 11px; }
+.rh-lots-viewall { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: var(--sf2-blue, #2563eb); white-space: nowrap; }
+.rh-lots-viewall svg { transition: transform .2s; }
+.rh-lots-viewall:hover svg { transform: translateX(2px); }
+.rh-lots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.rh-lots-grid .sf2-card { border-radius: 10px; }
+.rh-lots-grid .sf2-img { height: 120px; }
+.rh-lots-grid .sf2-body { padding: 10px 11px 12px; }
+.rh-lots-grid .sf2-ti { font-size: 12.5px; }
+.rh-lots-grid .sf2-gv { font-size: 13.5px; }
+
 /* =========================================================================
    RESPONSIVE
    ========================================================================= */
@@ -672,6 +690,12 @@
   .rh-oval { inset: 0 0 90px 0; border-radius: 120px; }
   .rh-circle { display: none; }
   .rh-float { display: none; }
+  .rh-lots { padding: 16px 16px 18px; }
+  .rh-lots-head { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .rh-lots-left h3 { font-size: 15px; }
+  .rh-lots-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .rh-lots-grid .sf2-card:last-child { display: none; }
+  .rh-lots-grid .sf2-img { height: 100px; }
 
   /* Contain overflow from path cards, code blocks, tables */
   .bx2-step { overflow: hidden; }
@@ -894,6 +918,23 @@
   .rh-auctions { font-size: 8px; padding: 5px 8px; }
   .rh-menu { display: none; }
   .rh-burger i { width: 14px; height: 1.5px; }
+  .rh-lots { padding: 12px 10px 14px; }
+  .rh-lots-left h3 { font-size: 13px; }
+  .rh-lots-meta { font-size: 10px; }
+  .rh-lots-live { padding: 4px 8px; }
+  .rh-lots-live .sf2-live-time { font-size: 9.5px; }
+  .rh-lots-live .sf2-live-label { font-size: 8.5px; }
+  .rh-lots-viewall { font-size: 10px; }
+  .rh-lots-grid { gap: 8px; }
+  .rh-lots-grid .sf2-img { height: 80px; }
+  .rh-lots-grid .sf2-body { padding: 8px 8px 10px; }
+  .rh-lots-grid .sf2-ti { font-size: 11px; }
+  .rh-lots-grid .sf2-loc { font-size: 9.5px; }
+  .rh-lots-grid .sf2-specs { font-size: 9px; }
+  .rh-lots-grid .sf2-gv { font-size: 11.5px; }
+  .rh-lots-grid .sf2-view { font-size: 9px; }
+  .rh-lots-grid .sf2-lot { font-size: 8px; padding: 3px 6px; }
+  .rh-lots-grid .sf2-cd { font-size: 8px; padding: 3px 6px; }
 
   /* ---- Paths / option cards ---- */
   .bx2-step { overflow: hidden; }
