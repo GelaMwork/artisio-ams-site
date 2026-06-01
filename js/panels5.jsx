@@ -92,10 +92,14 @@ const Security = () => {
 /* =========================================================================
    PANEL 10 — CTA + footer
    ========================================================================= */
-const FOOTER = [
-["Platform", ["Overview", "Inventory", "Sale day", "Payments", "Mobile apps"]],
-["Company", ["About", "Clients", "Security", "Careers", "Contact"]],
-["Resources", ["API docs", "Integrations", "Training library", "Status", "Release notes"]]];
+const FOOTER_NAV = [
+  ["Bidding", "bidding"],
+  ["Platform", "platform"],
+  ["Features", "features"],
+  ["Integrations", "integrations"],
+  ["Clients", "clients"],
+  ["Security", "security"],
+];
 
 
 const CTA = () => {
@@ -126,38 +130,15 @@ const CTA = () => {
         </div>
       </section>
 
-      <footer className="footer">
+      <footer className="footer footer-simple">
         <div className="wrap">
-          <div className="footer-grid">
-            <div className="footer-brand">
-              <LogoLight />
-              <p className="footer-desc">The cloud-native auction management system digitising the auction industry, front to back.</p>
-              <div className="footer-socials">
-                <a href="https://linkedin.com/company/artisio" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Icon n="bolt" s={16} /></a>
-                <a href="https://twitter.com/artisioams" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Icon n="close" s={14} sw={2.5} /></a>
-              </div>
-            </div>
-            {FOOTER.map(([title, links]) => (
-              <div className="footer-col" key={title}>
-                <h4>{title}</h4>
-                <ul>{links.map(l => <li key={l}><a href="#">{l}</a></li>)}</ul>
-              </div>
+          <div className="footer-nav-row">
+            {FOOTER_NAV.map(([label, id]) => (
+              <a key={id} href={"#" + id} className="footer-nav-link" onClick={(e) => { e.preventDefault(); const el = document.getElementById(id); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 70, behavior: window.PRM ? "auto" : "smooth" }); }}>{label}</a>
             ))}
           </div>
-          <div className="footer-badges">
-            {[
-            ["assets/badges/cyber-essentials.webp", "Cyber Essentials Certified"],
-            ["assets/badges/startup-world-cup.webp", "Startup World Cup"],
-            ["assets/badges/capterra.webp", "Capterra rated 5"],
-            ["assets/badges/business-award.webp", "Winner — TBC Business Award 2022"],
-            ["assets/badges/gdpr.webp", "GDPR Certified"],
-            ["assets/badges/pts.webp", "The Philatelic Traders' Society"]].
-            map((b) =>
-            <span className="cert" key={b[0]}><img src={b[0]} alt={b[1]} title={b[1]} /></span>
-            )}
-          </div>
           <div className="footer-bot">
-            <span>© 2026 Artisio Ltd. All rights reserved. · Registered in England &amp; Wales · Company No. 12706184</span>
+            <span>© 2026 Artisio Ltd. All rights reserved.</span>
           </div>
         </div>
       </footer>

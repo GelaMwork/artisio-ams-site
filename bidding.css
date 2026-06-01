@@ -326,6 +326,7 @@
 .bo-sales-actions { display: flex; align-items: center; gap: 8px; position: relative; }
 .bo-sales-actions .wf-btn { height: 32px; }
 .bo-sales-actions .wf-btn.on { border-color: var(--accent); color: var(--accent); }
+.bo-sales-actions .wf-btn.pri.on { color: #fff; }
 .bo-more { position: relative; }
 .bo-more-menu { position: absolute; top: calc(100% + 6px); right: 0; width: 200px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 10px; box-shadow: var(--shadow-lg); padding: 5px; z-index: 6; }
 .bo-more-menu .opt { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 11px; border-radius: 7px; font-size: 13px; color: var(--text-primary); white-space: nowrap; }
