@@ -355,11 +355,13 @@ body.no-ambient .mk .pd { animation: none !important; }
   .cta-sub { font-size: 14px; }
   .cta-section { padding: 0 16px 16px; }
 
-  /* Pillars — compact with horizontal icon+title */
-  .pillar { padding: 22px 20px 20px; min-height: 220px; }
-  .pillar-ico { width: 40px; height: 40px; border-radius: 10px; }
-  .pillar h3 { font-size: 17px; margin-top: 14px; }
-  .pillar p { font-size: 13.5px; margin-top: 8px; }
+  /* Pillars — compact cards */
+  .pillars { margin-top: 28px; gap: 12px; }
+  .pillar { padding: 20px 18px 18px; min-height: 180px; }
+  .pillar-ico { width: 36px; height: 36px; border-radius: 9px; }
+  .pillar h3 { font-size: 16px; margin-top: 10px; }
+  .pillar p { font-size: 13px; margin-top: 6px; line-height: 1.45; }
+  .pillar-deco { display: none; }
 
   /* Deep dive tabs — horizontal scroll */
   .deep-tabbar { gap: 2px; padding: 4px; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
@@ -381,13 +383,23 @@ body.no-ambient .mk .pd { animation: none !important; }
   .api-hub-core .lbl { font-size: 7px; }
   .api-hub { width: 115px; height: 115px; }
 
-  /* Clients / logo wall */
-  .logo-wall .logo-cell { padding: 16px 12px; }
-  .logo-wall .logo-cell img { max-height: 22px; }
+  /* Clients / logo wall — tighter grid */
+  .clients-section { --section-pad: 32px; }
+  .logo-wall .logo-cell { padding: 12px 10px; }
+  .logo-wall .logo-cell img { max-height: 20px; }
 
-  /* Footer compact */
-  .footer { padding: 40px 0 24px; }
-  .footer-grid { gap: 24px; }
+  /* Footer compact — 2-col links, tighter spacing */
+  .footer { padding: 32px 0 20px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-brand p { font-size: 13px; margin-top: 12px; }
+  .footer-socials { margin-top: 16px; }
+  .footer-col h4 { font-size: 11px; margin-bottom: 10px; }
+  .footer-col ul { gap: 8px; }
+  .footer-col a { font-size: 13px; }
+  .footer-badges { margin-top: 24px; padding-top: 20px; gap: 12px; }
+  .footer-badges .cert { height: 36px; }
+  .footer-bot { margin-top: 24px; padding-top: 16px; font-size: 12px; }
   .footer-desc { font-size: 13px; }
   .footer-certs { gap: 12px; margin-top: 24px; }
   .footer-certs img { height: 36px; }

@@ -207,7 +207,12 @@ button { font-family: inherit; }
   .wrap { padding: 0 16px; }
   .panel-h { font-size: clamp(26px, 7vw, 34px); }
   .panel-sub { font-size: 14px; }
-  .section-head { margin-bottom: 28px; }
+  .section-head { margin-bottom: 20px; }
+  section, .section { --section-pad: 36px; }
+  .mkt-section { --section-pad: 32px; }
+  .mkt-grid { gap: 28px !important; }
+  .mkt-list { margin-top: 18px; gap: 12px; }
+  .mkt-list li { font-size: 14px; }
 
   /* Hero compact */
   h1.hero-title { font-size: clamp(30px, 8.5vw, 42px); margin-top: 14px; }
@@ -254,9 +259,15 @@ button { font-family: inherit; }
   .hf-bidbtn { font-size: 6.5px; padding: 3px 6px; border-radius: 4px; flex: none; }
 
   /* About section compact */
-  .about-badge { width: 160px; height: 160px; }
-  .about-badge svg { width: 160px; height: 160px; }
+  .about { --section-pad: 32px; }
+  .about-grid { gap: 24px !important; }
+  .about-badge { width: 140px; height: 140px; }
+  .about-badge svg { width: 140px; height: 140px; }
+  .about-para { font-size: 14px; line-height: 1.5; }
   .about-stats { gap: 0; }
+  .about-stat { padding: 14px 16px; }
+  .about-stat b { font-size: 22px; }
+  .about-stat span { font-size: 12px; }
 
   /* Commitment section compact */
   .commit-card { padding: 16px; gap: 12px; }
