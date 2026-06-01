@@ -110,7 +110,7 @@ const RepHomepage = () => (
     <div className="rh-hero">
       <div className="rh-stage">
         <div className="rh-oval">
-          <img className="rh-oval-img" src="https://reportagegroup.com/wp-content/uploads/3-1.webp" alt="" />
+          <img className="rh-oval-img" src="https://reportagegroup.com/wp-content/uploads/s1.webp" alt="" />
         </div>
         <div className="rh-circle">
           <div className="glass" />
