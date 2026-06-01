@@ -254,10 +254,6 @@ button { font-family: inherit; }
   .crm-ico { width: 36px; height: 36px; border-radius: 9px; }
   .crm-txt { font-size: 13.5px; }
 
-  /* Prevent horizontal overflow from glow effects and transforms */
-  .mkt-section { overflow: hidden; }
-  .mkt-visual { overflow: hidden; }
-  #about { overflow: hidden; }
 }
 .hero-eyebrow .dot { width: 7px; height: 7px; border-radius: 999px; background: var(--artisio-sky); box-shadow: 0 0 0 4px rgba(0,170,255,.25); }
 
@@ -428,7 +424,7 @@ h1.hero-title .word { display: inline-block; margin-right: 0.22em; }
 /* =========================================================================
    Marketing & Payments two-column sections
    ========================================================================= */
-.mkt-section { background: var(--bg-canvas); border-top: 1px solid var(--border-subtle); }
+.mkt-section { background: var(--bg-canvas); border-top: 1px solid var(--border-subtle); overflow: hidden; }
 .pay-section { background: var(--bg-surface); }
 .mkt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .mkt-list { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-direction: column; gap: 16px; }

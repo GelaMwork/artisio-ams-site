@@ -585,7 +585,7 @@
   .rh-menu { display: none; }
   .rh-stage { height: 340px; }
   .rh-oval { inset: 0 0 90px 0; border-radius: 120px; }
-  .rh-circle { position: static; transform: none; width: 100%; height: auto; aspect-ratio: 1; max-width: 300px; margin: -80px auto 0; }
+  .rh-circle { display: none; }
   .rh-float { display: none; }
 }
 @media (max-width: 720px) {
