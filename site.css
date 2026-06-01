@@ -187,7 +187,13 @@ button { font-family: inherit; }
 .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.02fr; gap: 68px; align-items: center; }
 
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); padding: 7px 14px 7px 10px; border-radius: 999px; backdrop-filter: blur(6px); white-space: nowrap; }
-@media (max-width: 460px) { .hero-eyebrow { white-space: normal; } }
+@media (max-width: 460px) {
+  :root { --section-pad: 48px; }
+  .hero-eyebrow { white-space: normal; }
+  .hero { padding-top: 100px; padding-bottom: 72px; }
+  .wrap { padding: 0 16px; }
+  .panel-h { font-size: clamp(26px, 7vw, 34px); }
+}
 .hero-eyebrow .dot { width: 7px; height: 7px; border-radius: 999px; background: var(--artisio-sky); box-shadow: 0 0 0 4px rgba(0,170,255,.25); }
 
 h1.hero-title { font-size: clamp(34px, 4.7vw, 62px); font-weight: 800; line-height: .98; letter-spacing: -.04em; margin: 20px 0 0; }
