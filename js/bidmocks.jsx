@@ -145,7 +145,7 @@ const RepHomepage = () => (
    STEP 02 — Reportage white-label storefront (inside reportagegroup.com)
    ========================================================================= */
 const RepStorefront = () => (
-  <div className="wf wf-rep">
+  <div className="wf wf-rep sf2">
     <div className="wf-chrome">
       <div className="wf-dots"><i /><i /><i /></div>
       <div className="wf-url"><Icon n="lock" s={13} sw={2} /> <b>reportagegroup.com</b>/auctions</div>
@@ -158,61 +158,57 @@ const RepStorefront = () => (
       <span className="nl">Sell</span>
       <span className="nl">About</span>
       <span className="right">
+        <span className="rep-btn solid sm">Register to bid</span>
         <span className="acct"><span className="av" /> Sign in</span>
       </span>
     </div>
-    <div className="rep-hero">
-      <div>
-        <div className="ey">Live timed auction</div>
+    <div className="sf2-hero">
+      <div className="sf2-hero-left">
         <h2>May Property Auction</h2>
-        <div className="meta"><span>13 lots</span><span>Timed online</span><span>Ends 30 May 2026, 10:00</span></div>
+        <div className="meta"><span>13 lots</span><span className="dot" /><span>Timed online</span><span className="dot" /><span>Ends 30 May 2026</span></div>
       </div>
-      <div className="ends">
-        <span className="rep-btn solid" style={{ marginBottom: 14 }}>Register to bid</span>
-        <div className="l">Ends in</div>
-        <div className="v"><RepCountdown mode="full" /></div>
+      <div className="sf2-live-pill">
+        <span className="sf2-dot" />
+        <span className="sf2-live-label">Live</span>
+        <span className="sf2-live-sep" />
+        <span className="sf2-live-time"><RepCountdown mode="full" /></span>
       </div>
     </div>
-    <div className="rep-listing">
-      <div className="rep-filters">
-        <div className="rep-fgroup">
-          <div className="ft">Auction Status</div>
-          <div className="rep-fopt on"><span className="rep-check on"><Icon n="check" s={10} sw={3} /></span> Published</div>
-          <div className="rep-fopt"><span className="rep-check" /> Upcoming</div>
-          <div className="rep-fopt"><span className="rep-check" /> Ended</div>
-        </div>
-        <div className="rep-fgroup">
-          <div className="ft">Property Type</div>
-          {["House", "Apartment", "Land", "Commercial"].map((t, i) => (
-            <div className={"rep-fopt" + (i === 0 ? " on" : "")} key={t}><span className={"rep-check" + (i === 0 ? " on" : "")}>{i === 0 ? <Icon n="check" s={10} sw={3} /> : null}</span> {t}</div>
-          ))}
-        </div>
-        <div className="rep-fgroup">
-          <div className="ft">Guide Price</div>
-          <div className="rep-input" style={{ marginBottom: 8 }}>£ Min</div>
-          <div className="rep-input">£ Max</div>
-        </div>
+    <div className="sf2-bar">
+      <div className="sf2-pills">
+        <span className="sf2-pill on">All lots</span>
+        <span className="sf2-pill">House</span>
+        <span className="sf2-pill">Apartment</span>
+        <span className="sf2-pill">Land</span>
+        <span className="sf2-pill">Commercial</span>
       </div>
-      <div className="rep-results">
-        <div className="rh">
-          <span className="ct"><b>6</b> properties · sorted by lot</span>
-          <span className="rep-btn outline" style={{ height: 32, fontSize: 11 }}>Sort</span>
-        </div>
-        <div className="rep-grid">
-          {PROPS.map((p) => (
-            <div className="rep-card" key={p.lot}>
-              <div className="ph"><img src={p.photo} alt="" style={{ objectPosition: p.pos || "50% 50%" }} /></div>
-              <div className="cb">
-                <div className="lot"><span>Lot {p.lot}</span><span className="cd-mini"><RepCountdown mode="card" offset={p.lot * 37} /></span></div>
-                <div className="ti">{p.title}</div>
-                <div className="loc"><Icon n="pin" s={12} sw={1.8} /> {p.loc}</div>
-                <div className="specs"><span><Icon n="bed" s={13} sw={1.7} /> {p.beds}</span><span><Icon n="ruler" s={13} sw={1.7} /> {p.area}</span></div>
-                <div className="gd"><span><span className="gl">Guide</span><div className="gv">{p.guide.split(" – ")[0]}</div></span><span className="rep-btn solid" style={{ height: 32, fontSize: 10 }}>View lot</span></div>
-              </div>
+      <div className="sf2-count"><b>6</b> properties</div>
+    </div>
+    <div className="sf2-grid">
+      {PROPS.map((p) => (
+        <div className="sf2-card" key={p.lot}>
+          <div className="sf2-img">
+            <img src={p.photo} alt="" style={{ objectPosition: p.pos || "50% 50%" }} />
+            <span className="sf2-lot">Lot {p.lot}</span>
+            <span className="sf2-cd"><RepCountdown mode="card" offset={p.lot * 37} /></span>
+          </div>
+          <div className="sf2-body">
+            <div className="sf2-ti">{p.title}</div>
+            <div className="sf2-loc"><Icon n="pin" s={11} sw={1.8} /> {p.loc}</div>
+            <div className="sf2-specs">
+              <span><Icon n="bed" s={12} sw={1.7} /> {p.beds}</span>
+              <span><Icon n="ruler" s={12} sw={1.7} /> {p.area}</span>
             </div>
-          ))}
+            <div className="sf2-foot">
+              <div className="sf2-price">
+                <span className="sf2-gl">Guide</span>
+                <span className="sf2-gv">{p.guide.split(" – ")[0]}</span>
+              </div>
+              <span className="sf2-view">View <Icon n="arrow" s={13} sw={2} /></span>
+            </div>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   </div>
 );

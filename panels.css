@@ -43,17 +43,17 @@
   position: relative; background: var(--bg-surface); border: 1px solid var(--border-subtle);
   border-radius: var(--radius-card); padding: 24px 22px 26px; overflow: hidden;
   transition: transform var(--dur-slow) var(--ease-out), box-shadow var(--dur-slow) var(--ease-out), border-color var(--dur-slow) var(--ease-out);
-  cursor: default;
+  cursor: pointer;
 }
-.cap-card::before { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: var(--grad-accent); transform: scaleX(0); transform-origin: left; transition: transform var(--dur-slow) var(--ease-out); }
-.cap-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-card); border-color: var(--border-default); }
-.cap-card:hover::before { transform: scaleX(1); }
-.cap-ico { width: 46px; height: 46px; border-radius: 11px; background: var(--action-bg-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; transition: transform var(--dur-slow) var(--ease-out), background var(--dur-slow) var(--ease-out); }
+.cap-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(ellipse at 30% 0%, rgba(0,87,255,.06), transparent 70%); opacity: 0; transition: opacity .35s var(--ease-out); pointer-events: none; }
+.cap-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px -6px rgba(0,87,255,.13), 0 2px 8px rgba(0,0,0,.04); border-color: rgba(0,87,255,.18); }
+.cap-card:hover::before { opacity: 1; }
+.cap-ico { width: 46px; height: 46px; border-radius: 11px; background: var(--action-bg-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; transition: transform var(--dur-slow) var(--ease-out), background var(--dur-slow) var(--ease-out), box-shadow var(--dur-slow) var(--ease-out), color var(--dur-slow) var(--ease-out); }
 .cap-ico svg { width: 23px; height: 23px; }
-.cap-card:hover .cap-ico { transform: translateY(-3px) rotate(-6deg) scale(1.06); background: var(--accent); color: #fff; }
+.cap-card:hover .cap-ico { transform: scale(1.1); background: var(--accent); color: #fff; box-shadow: 0 4px 16px -2px rgba(0,87,255,.35); }
 .cap-card.feat { background: var(--grad-hero); color: #fff; border-color: transparent; }
 .cap-card.feat .cap-ico { background: rgba(255,255,255,.12); color: var(--artisio-sky); }
-.cap-card.feat:hover .cap-ico { background: var(--artisio-sky); color: var(--artisio-navy); }
+.cap-card.feat:hover .cap-ico { background: var(--artisio-sky); color: var(--artisio-navy); box-shadow: 0 4px 16px -2px rgba(0,170,255,.4); }
 .cap-card.feat .cap-title { color: #fff; }
 .cap-card.feat .cap-desc { color: #B9C4DD; }
 .cap-card.feat .cap-tag { color: var(--artisio-sky); border-color: rgba(255,255,255,.2); }
