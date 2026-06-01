@@ -253,6 +253,11 @@ button { font-family: inherit; }
   .crm-card { padding: 20px; min-height: auto; }
   .crm-ico { width: 36px; height: 36px; border-radius: 9px; }
   .crm-txt { font-size: 13.5px; }
+
+  /* Prevent horizontal overflow from glow effects and transforms */
+  .mkt-section { overflow: hidden; }
+  .mkt-visual { overflow: hidden; }
+  #about { overflow: hidden; }
 }
 .hero-eyebrow .dot { width: 7px; height: 7px; border-radius: 999px; background: var(--artisio-sky); box-shadow: 0 0 0 4px rgba(0,170,255,.25); }
 
