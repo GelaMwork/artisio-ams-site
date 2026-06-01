@@ -587,6 +587,13 @@
   .rh-oval { inset: 0 0 90px 0; border-radius: 120px; }
   .rh-circle { display: none; }
   .rh-float { display: none; }
+
+  /* Contain overflow from path cards, code blocks, tables */
+  .bx2-step { overflow: hidden; }
+  .bx2-paths { overflow: hidden; }
+  .bx2-path { overflow: hidden; min-width: 0; }
+  .bx2-codeblock { overflow-x: auto; max-width: 100%; }
+  .bx2-codeblock .cl { white-space: pre-wrap; word-break: break-all; }
 }
 @media (max-width: 720px) {
   .bx2-intro { max-width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left; }
