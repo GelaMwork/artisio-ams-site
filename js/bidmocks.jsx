@@ -73,12 +73,12 @@ const PhotoThumb = ({ photo, pos }) => (
 
 /* shared property data — matches the back-office screenshots (stock PRP380) */
 const PROPS = [
-  { lot: 1, stock: "PRP380 / 1", title: "3-Bedroom Semi-Detached House", loc: "Surrey", type: "home", beds: "3 bed", area: "1,240 sq ft", guide: "£550,000 – £620,000", reserve: "£550,000", start: "£550,000", incr: "£10,000", photo: "https://reportagegroup.com/wp-content/uploads/s1.webp", pos: "50% 42%" },
-  { lot: 2, stock: "PRP380 / 15", title: "2-Bedroom Flat", loc: "Liverpool", type: "building", beds: "2 bed", area: "720 sq ft", guide: "£210,000 – £240,000", reserve: "£210,000", start: "£210,000", incr: "£5,000", photo: "https://reportagegroup.com/wp-content/uploads/3-1.webp", pos: "50% 50%" },
-  { lot: 3, stock: "PRP380 / 14", title: "Building Plot (1 Acre)", loc: "Kent", type: "map", beds: "Land", area: "1 acre", guide: "£250,000 – £300,000", reserve: "£250,000", start: "£250,000", incr: "£10,000", photo: "https://reportagegroup.com/wp-content/uploads/s1.webp", pos: "30% 70%" },
-  { lot: 4, stock: "PRP380 / 6", title: "Mixed-Use Building", loc: "Glasgow", type: "building", beds: "Commercial", area: "4,500 sq ft", guide: "£950,000 – £1,150,000", reserve: "£950,000", start: "£950,000", incr: "£25,000", photo: "https://reportagegroup.com/wp-content/uploads/3-1.webp", pos: "70% 40%" },
-  { lot: 5, stock: "PRP380 / 2", title: "Luxury Penthouse", loc: "Central London", type: "building", beds: "3 bed", area: "2,100 sq ft", guide: "£2,800,000 – £3,200,000", reserve: "£2,800,000", start: "£2,800,000", incr: "£50,000", photo: "https://reportagegroup.com/wp-content/uploads/s1.webp", pos: "50% 20%" },
-  { lot: 6, stock: "PRP380 / 5", title: "Retail Shopfront", loc: "Brighton", type: "building", beds: "Commercial", area: "1,800 sq ft", guide: "£500,000 – £600,000", reserve: "£500,000", start: "£500,000", incr: "£10,000", photo: "https://reportagegroup.com/wp-content/uploads/3-1.webp", pos: "30% 50%" },
+  { lot: 1, stock: "PRP380 / 1", title: "3-Bedroom Semi-Detached House", loc: "Surrey", type: "home", beds: "3 bed", area: "1,240 sq ft", guide: "£550,000 – £620,000", reserve: "£550,000", start: "£550,000", incr: "£10,000", photo: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80", pos: "50% 50%" },
+  { lot: 2, stock: "PRP380 / 15", title: "2-Bedroom Flat", loc: "Liverpool", type: "building", beds: "2 bed", area: "720 sq ft", guide: "£210,000 – £240,000", reserve: "£210,000", start: "£210,000", incr: "£5,000", photo: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80", pos: "50% 60%" },
+  { lot: 3, stock: "PRP380 / 14", title: "Building Plot (1 Acre)", loc: "Kent", type: "map", beds: "Land", area: "1 acre", guide: "£250,000 – £300,000", reserve: "£250,000", start: "£250,000", incr: "£10,000", photo: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80", pos: "50% 50%" },
+  { lot: 4, stock: "PRP380 / 6", title: "Mixed-Use Building", loc: "Glasgow", type: "building", beds: "Commercial", area: "4,500 sq ft", guide: "£950,000 – £1,150,000", reserve: "£950,000", start: "£950,000", incr: "£25,000", photo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80", pos: "50% 40%" },
+  { lot: 5, stock: "PRP380 / 2", title: "Luxury Penthouse", loc: "Central London", type: "building", beds: "3 bed", area: "2,100 sq ft", guide: "£2,800,000 – £3,200,000", reserve: "£2,800,000", start: "£2,800,000", incr: "£50,000", photo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80", pos: "50% 50%" },
+  { lot: 6, stock: "PRP380 / 5", title: "Retail Shopfront", loc: "Brighton", type: "building", beds: "Commercial", area: "1,800 sq ft", guide: "£500,000 – £600,000", reserve: "£500,000", start: "£500,000", incr: "£10,000", photo: "https://images.unsplash.com/photo-1555636222-cae831e670b3?w=800&q=80", pos: "50% 50%" },
 ];
 
 /* =========================================================================
@@ -110,7 +110,7 @@ const RepHomepage = () => (
     <div className="rh-hero">
       <div className="rh-stage">
         <div className="rh-oval">
-          <img className="rh-oval-img" src="https://reportagegroup.com/wp-content/uploads/s1.webp" alt="" />
+          <img className="rh-oval-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80" alt="" />
         </div>
         <div className="rh-circle">
           <div className="glass" />
@@ -569,9 +569,9 @@ const BOCreateSale = () => {
           <div>
             <span className="wf-label">Auction Images</span>
             <div className="bo-thumbs">
-              {["s1.webp", "3-1.webp", "s1.webp", "3-1.webp"].map((f, i) => (
+              {[PROPS[0].photo, PROPS[1].photo, PROPS[4].photo, PROPS[3].photo].map((src, i) => (
                 <div className="bo-thumb" key={i}>
-                  <img src={"https://reportagegroup.com/wp-content/uploads/" + f} alt="" style={{ objectPosition: ["50% 35%", "50% 50%", "30% 60%", "70% 40%"][i] }} />
+                  <img src={src} alt="" style={{ objectPosition: "50% 50%" }} />
                   {i === 0 ? <span className="cover">Cover</span> : null}
                   <span className="rm"><Icon n="close" s={10} sw={2.6} /></span>
                 </div>
@@ -723,10 +723,10 @@ const RepRegister = () => (
 const RepLotBid = () => {
   const p = PROPS[4]; // Luxury Penthouse
   const heroImgs = [
-    { src: "https://reportagegroup.com/wp-content/uploads/s1.webp", pos: "50% 30%" },
-    { src: "https://reportagegroup.com/wp-content/uploads/3-1.webp", pos: "50% 45%" },
-    { src: "https://reportagegroup.com/wp-content/uploads/s1.webp", pos: "78% 62%" },
-    { src: "https://reportagegroup.com/wp-content/uploads/3-1.webp", pos: "28% 38%" },
+    { src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80", pos: "50% 50%" },
+    { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80", pos: "50% 45%" },
+    { src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80", pos: "50% 50%" },
+    { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80", pos: "50% 40%" },
   ];
   const [active, setActive] = useBState(0);
   const specs = [
