@@ -438,6 +438,20 @@
 .rep-modal .rep-req .badge.warn { background: var(--warning-bg); color: #946200; }
 .rep-modal .rep-req .badge.req { background: var(--action-bg-soft); color: var(--accent); }
 .wf-pill.req .d { background: var(--accent); }
+
+/* ---- Registration Modal — modern polish ---- */
+.rep-modal { border-radius: 14px; border: 1px solid rgba(0,0,0,.08); box-shadow: 0 25px 60px -15px rgba(0,0,0,.25), 0 10px 20px -10px rgba(0,0,0,.1); }
+.rep-modal-head h3 { font-size: 24px; font-weight: 600; font-family: var(--font-sans); letter-spacing: -.02em; }
+.rep-modal-head .sub { font-size: 13.5px; color: #6b7280; }
+.rep-modal-x { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: transparent; transition: background .15s; }
+.rep-req .ic, .rep-modal .rep-req .ic { border-radius: 10px; background: #f0f4ff; border-color: #e0e7ff; color: #3b5bdb; }
+.rep-req .badge.ok { background: #ecfdf5; color: #059669; }
+.rep-req .badge.warn { background: #fff7ed; color: #d97706; }
+.rep-req .badge.req { background: #eff6ff; color: #2563eb; }
+.rep-modal-foot { border-radius: 0 0 14px 14px; background: #f8f9fb; }
+.rep-btn.solid { border-radius: 8px; background: #111827; }
+.rep-btn.outline { border-radius: 8px; }
+
 /* neutral grey tag (distinct from blue status pills) */
 .wf-pill.neutral { color: var(--rep-muted, var(--text-secondary)); background: var(--rep-stone, var(--bg-surface-alt)); border-color: var(--rep-line, var(--border-default)); }
 .rep-reg .side .st { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--rep-muted); margin-bottom: 4px; }
@@ -594,6 +608,20 @@
   .bx2-path { overflow: hidden; min-width: 0; }
   .bx2-codeblock { overflow-x: auto; max-width: 100%; }
   .bx2-codeblock .cl { white-space: pre-wrap; word-break: break-all; }
+
+  /* ---- Lot Bid Panel — mobile polish ---- */
+  .rep-lot .bidrail { padding: 16px; }
+  .rep-lot .bidbox { border-radius: 12px; background: #f8f9fb; border-color: #e5e7eb; }
+  .rep-lot .bidbox .cv { font-size: 22px; }
+  .rep-lot .reserve-tag { border-radius: 8px; }
+  .rep-btn.solid.block.lg { border-radius: 10px; height: 48px; }
+  .rep-btn.outline.block.lg { border-radius: 10px; }
+  .rep-lot .gal .specs { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .rep-lot .gal .hero { height: 220px; border-radius: 12px; }
+  .rep-lot .gal .thumbs .t { width: 56px; height: 42px; border-radius: 6px; }
+  .rep-lot .gal .keyfeat ul { gap: 8px 14px; }
+  .rep-divider { margin: 12px 0; }
+  .rep-buynow { border-radius: 10px; }
 
   /* Step 04 — cap registration shell height, keep background visible but cropped */
   .rep-shell { max-height: 520px; }
@@ -820,6 +848,14 @@
   /* ---- Code block ---- */
   .bx2-codeblock { padding: 10px 10px; border-radius: 8px; overflow-x: auto; max-width: 100%; }
   .bx2-codeblock .cl { font-size: 9px; line-height: 1.6; white-space: pre-wrap; word-break: break-all; }
+
+  /* ---- Lot Bid Panel — small mobile polish ---- */
+  .rep-lot .gal .specs { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .rep-lot .gal .specs .f .fv { font-size: 12px; }
+  .rep-lot .gal .specs .f .fl { font-size: 8px; }
+  .rep-lot .bidrail { padding: 12px; }
+  .rep-lot .bidbox .cv { font-size: 20px; }
+  .rep-lot .lottitle { font-size: 17px; }
 
   /* ---- Two-stack substep labels ---- */
   .bx2-substep { margin: 14px 0 8px; }
