@@ -216,27 +216,34 @@
    PANEL 10 — CTA + footer
    ========================================================================= */
 .cta-section { padding: 0 28px 28px; }
-.cta-band { max-width: var(--content-w); margin: 0 auto; border-radius: 28px; padding: 84px 64px; position: relative; overflow: hidden; background: var(--grad-cta); background-size: 200% 200%; }
+.cta-band { max-width: var(--content-w); margin: 0 auto; border-radius: 28px; padding: 96px 72px; position: relative; overflow: hidden; background: var(--grad-cta); background-size: 200% 200%; }
+.cta-bg-pattern { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
 .gradient-shift { animation: gShift 12s ease-in-out infinite; }
 @keyframes gShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 .cta-band .deco-ring { position: absolute; border-radius: 50%; border: 2px solid rgba(255,255,255,.12); }
 .cta-inner { position: relative; z-index: 2; max-width: 720px; }
-.cta-h { font-size: clamp(34px, 5vw, 60px); font-weight: 800; letter-spacing: -.03em; line-height: 1.02; color: #fff; }
-.cta-p { font-size: 18px; line-height: 1.6; color: rgba(255,255,255,.85); margin: 20px 0 0; max-width: 540px; }
-.cta-actions { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+.cta-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 6px 16px 6px 10px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.9); letter-spacing: .02em; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.cta-pill-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 8px rgba(74,222,128,.6); animation: ctaDotPulse 2s ease-in-out infinite; }
+@keyframes ctaDotPulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+.cta-h { font-size: clamp(34px, 5vw, 60px); font-weight: 800; letter-spacing: -.03em; line-height: 1.05; color: #fff; }
+.cta-p { font-size: 17px; line-height: 1.65; color: rgba(255,255,255,.75); margin: 20px 0 0; max-width: 540px; }
+.cta-actions { display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap; align-items: center; }
+.cta-ghost { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.85); transition: color .2s; }
+.cta-ghost:hover { color: #fff; }
+.cta-ghost svg { transition: transform .2s; }
+.cta-ghost:hover svg { transform: translateX(3px); }
 .btn-glow { box-shadow: 0 0 0 0 rgba(255,255,255,.5); animation: glowPulse 2.6s var(--ease-in-out) infinite; }
 .btn-white { background: #fff; color: var(--artisio-navy); }
 .btn-white:hover { background: #fff; transform: translateY(-2px); }
 @keyframes glowPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(255,255,255,.35); } 50% { box-shadow: 0 0 0 10px rgba(255,255,255,0); } }
 
-.footer { background: var(--artisio-navy); color: #fff; padding: 64px 0 36px; }
-.footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 26px; align-items: center; max-width: 620px; justify-content: flex-end; }
-.footer-nav a { font-size: 14px; color: #C9D6F5; position: relative; }
-.footer-nav a:last-child { color: #fff; font-weight: 700; }
-.footer-nav a:hover { color: #fff; }
-.footer-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 40px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.1); }
-.footer-badges .cert { height: 58px; display: inline-flex; align-items: center; }
+.footer { background: var(--artisio-navy); color: #fff; padding: 72px 0 36px; }
+.footer-socials { display: flex; gap: 10px; margin-top: 24px; }
+.footer-socials a { width: 36px; height: 36px; border-radius: 9px; border: 1px solid rgba(255,255,255,.14); display: flex; align-items: center; justify-content: center; color: #9FB0DA; transition: background .2s, border-color .2s, color .2s; }
+.footer-socials a:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.3); color: #fff; }
+.footer-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,.08); }
+.footer-badges .cert { height: 52px; display: inline-flex; align-items: center; opacity: .7; transition: opacity .2s; }
+.footer-badges .cert:hover { opacity: 1; }
 .footer-badges .cert img { height: 100%; width: auto; max-width: 150px; object-fit: contain; display: block; }
 .cert-slot { background: rgba(255,255,255,.92); border-radius: 8px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }

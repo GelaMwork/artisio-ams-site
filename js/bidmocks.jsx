@@ -110,13 +110,13 @@ const RepHomepage = () => (
     <div className="rh-hero">
       <div className="rh-stage">
         <div className="rh-oval">
-          <img className="rh-oval-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80" alt="" />
+          <img className="rh-oval-img" src="https://reportagegroup.com/wp-content/uploads/3-1.webp" alt="" />
         </div>
         <div className="rh-circle">
           <div className="glass" />
           <span className="rh-c-loc">Abu Dhabi</span>
-          <span className="rh-c-name">Sensational<br />Living</span>
-          <span className="rh-c-sub">Luxury residences from AED 1.2M</span>
+          <span className="rh-c-name">Sensi</span>
+          <span className="rh-c-sub">Inspiration Surrounds</span>
           <span className="rh-explore">
             <span className="rh-exp-t">Explore</span>
             <span className="c"><Icon n="arrow" s={16} sw={2} /></span>

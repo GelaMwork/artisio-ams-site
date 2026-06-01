@@ -105,18 +105,22 @@ const CTA = () => {
     <React.Fragment>
       <section className="cta-section" id="contact" style={{ paddingTop: "var(--section-pad)" }}>
         <div className="cta-band gradient-shift" ref={ref}>
-          <div className="deco-ring" style={{ width: 320, height: 320, right: -80, top: -120 }} />
-          <div className="deco-ring" style={{ width: 180, height: 180, right: 140, bottom: -90 }} />
-          <div className="deco-ring" style={{ width: 90, height: 90, left: "44%", bottom: 30, borderColor: "rgba(255,255,255,.18)" }} />
+          <div className="cta-bg-pattern" />
+          <div className="deco-ring" style={{ width: 400, height: 400, right: -100, top: -160 }} />
+          <div className="deco-ring" style={{ width: 240, height: 240, right: 180, bottom: -120 }} />
+          <div className="deco-ring" style={{ width: 120, height: 120, left: "38%", bottom: 40, borderColor: "rgba(255,255,255,.15)" }} />
           <div className="cta-inner">
-            <span className="eyebrow on-dark" style={{ color: "#fff" }}>Ready when you are</span>
-            <h2 className={"cta-h reveal" + (inView ? " in" : "")} style={{ "--d": "60ms", marginTop: 16 }}>Implement auctions in your business now.</h2>
-            <p className={"cta-p reveal" + (inView ? " in" : "")} style={{ "--d": "140ms" }}>See Artisio AMS run a sale end to end. Book a 1 hour demo with our team and we'll tailor it to your categories and workflow.
-
-
-            </p>
+            <span className={"cta-pill reveal" + (inView ? " in" : "")} style={{ "--d": "0ms" }}>
+              <span className="cta-pill-dot" />
+              Ready when you are
+            </span>
+            <h2 className={"cta-h reveal" + (inView ? " in" : "")} style={{ "--d": "60ms", marginTop: 20 }}>
+              Implement auctions in<br />your business now.
+            </h2>
+            <p className={"cta-p reveal" + (inView ? " in" : "")} style={{ "--d": "140ms" }}>See Artisio AMS run a sale end to end. Book a 1-hour demo with our team and we'll tailor it to your categories and workflow.</p>
             <div className={"cta-actions reveal" + (inView ? " in" : "")} style={{ "--d": "220ms" }}>
               <a className="btn btn-white btn-lg btn-glow" href="https://www.artisio.co/book-a-demo" target="_blank" rel="noopener noreferrer">Book a demo <Icon n="arrow" s={17} /></a>
+              <a className="cta-ghost" href="https://www.artisio.co/contact" target="_blank" rel="noopener noreferrer">Contact sales <Icon n="arrow" s={15} sw={2} /></a>
             </div>
           </div>
         </div>
@@ -124,18 +128,21 @@ const CTA = () => {
 
       <footer className="footer">
         <div className="wrap">
-          <div className="footer-top">
+          <div className="footer-grid">
             <div className="footer-brand">
               <LogoLight />
-              <p>The cloud-native auction management system digitising the auction industry, front to back.</p>
+              <p className="footer-desc">The cloud-native auction management system digitising the auction industry, front to back.</p>
+              <div className="footer-socials">
+                <a href="https://linkedin.com/company/artisio" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Icon n="bolt" s={16} /></a>
+                <a href="https://twitter.com/artisioams" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Icon n="close" s={14} sw={2.5} /></a>
+              </div>
             </div>
-            <nav className="footer-nav">
-              {[["Bidding", "bidding"], ["Platform", "platform"], ["Features", "features"], ["Integrations", "integrations"], ["Clients", "clients"], ["Security", "security"], ["Book a demo", "demo"]].map(([l, id]) =>
-              <a key={l} href={id === "demo" ? "https://www.artisio.co/book-a-demo" : "#" + id}
-              target={id === "demo" ? "_blank" : undefined} rel="noopener noreferrer"
-              onClick={(e) => {if (id !== "demo") {e.preventDefault();go(id);}}}>{l}</a>
-              )}
-            </nav>
+            {FOOTER.map(([title, links]) => (
+              <div className="footer-col" key={title}>
+                <h4>{title}</h4>
+                <ul>{links.map(l => <li key={l}><a href="#">{l}</a></li>)}</ul>
+              </div>
+            ))}
           </div>
           <div className="footer-badges">
             {[
